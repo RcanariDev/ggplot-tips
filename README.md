@@ -52,3 +52,20 @@ ggplot( ... ) +
 <br />
 <br />
 
+## 4. Grafico de barra agrupado simple
+
+<br />
+
+```r
+DataEmp11 %>% 
+  ggplot(
+    data = .
+  ) +
+  geom_bar(
+    mapping = aes(x = NombreCompania, y = TotalCasos, fill = FechaMesOrdenAjustado)
+    , stat = "identity"
+    , position = "dodge"
+  )
+```
+
+<br />
