@@ -3,7 +3,7 @@
 <br />
 <br />
 
-## 1. Poner coma de miles 
+## 1. Poner coma de miles y establecer limites del eje Y
 
 <br />
 
@@ -11,6 +11,7 @@
 ggplot( .... ) +
 scale_y_continuous(
     labels = scales::comma
+    , limits = c(0, 300)
   )
 ```
 
