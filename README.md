@@ -37,5 +37,18 @@ Data %>%
 <br />
 <br />
 
+## 3. Cambiar nombre de los ejes x e y
 
+<br />
+
+```r
+ggplot( ... ) +
+  labs(
+    x = "Año - Mes",
+    y = "Total de Casos"
+  )
+```
+
+<br />
+<br />
 
