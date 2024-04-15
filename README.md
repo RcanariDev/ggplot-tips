@@ -101,4 +101,52 @@ DataSem12 %>%
 <br />
 <br />
 
+## 6. Agregar detalle a un tema predeterminado
+
+<br />
+
+- Se aumenta *theme()* al tema predeterminado *theme_bw()*
+
+<br />
+
+```r
+DataSem12 %>% 
+  ggplot(
+    data = .
+  ) +
+  theme_bw() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust=1)
+  )
+```
+
+
+<br />
+<br />
+
+# 7. Cambiar nombre a los ejes y la leyenda
+
+<br />
+
+- Se utiliza los parámetros: *x*, *y* y *fill*
+  
+<br />
+
+````r
+DataSem12 %>% 
+  ggplot(
+    data = .
+  ) +
+    labs(
+        x = "Nombre Compañia"
+        , y = "Total Casos"
+        , fill = "Fecha (Viernes)"
+      ) 
+```
+
+
+<br />
+<br />
+
+
+
 
