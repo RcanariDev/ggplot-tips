@@ -69,3 +69,36 @@ DataEmp11 %>%
 ```
 
 <br />
+<br />
+
+## 5. Agregar un área de sombras entre dos lines
+
+<br />
+
+Se emplea la función *annotate()*
+
+<br />
+
+```r
+DataSem12 %>% 
+  ggplot(
+    data = .
+  ) +
+  geom_line(
+    mapping = aes(x = DiaSemana, y = TotalCasos, group = Anio, color = Anio)
+  ) +
+  geom_point(
+    mapping = aes(x = DiaSemana, y = TotalCasos, group = Anio, color = Anio)
+  )+
+  scale_color_manual(
+    values = c("red", "blue")
+  ) +
+  annotate('rect', xmin=3.5, xmax=6.5, ymin=-Inf, ymax=Inf, alpha=.4, fill='grey') +
+  theme_bw()
+
+```
+
+<br />
+<br />
+
+
