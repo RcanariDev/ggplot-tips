@@ -131,7 +131,7 @@ DataSem12 %>%
   
 <br />
 
-````r
+```r
 DataSem12 %>% 
   ggplot(
     data = .
