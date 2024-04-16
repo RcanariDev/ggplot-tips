@@ -272,8 +272,8 @@ ggsave("C:/Users/.../img/Img15.png", plot = DataUnida11, width=18, height=8, dpi
 
 <br />
 
-- Si contiene: **!grepl("-01", FechaMesOrdenAjustado)**
-- No contiene: **grepl("-01", FechaMesOrdenAjustado)**
+- Si contiene: **grepl("-01", FechaMesOrdenAjustado)**
+- No contiene: **!grepl("-01", FechaMesOrdenAjustado)**
 - Contiene varios valores (ó) (|): **grepl("-01|-02", FechaMesOrdenAjustado)**
 
 <br />
