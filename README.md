@@ -268,30 +268,52 @@ ggsave("C:/Users/.../img/Img15.png", plot = DataUnida11, width=18, height=8, dpi
 <br />
 
 
-## 10. Uso de grepl() para patrones
+## 10. Crear gráfico de lineas simple
 
 <br />
 
-- Si contiene: **grepl("-01", FechaMesOrdenAjustado)**
-- No contiene: **!grepl("-01", FechaMesOrdenAjustado)**
-- Contiene varios valores (ó) (|): **grepl("-01|-02", FechaMesOrdenAjustado)**
+- Se agrega **group = 1**
 
 <br />
 
 ```r
-Data11 %>% 
-  mutate(Mes = case_when(
-    grepl("-01", FechaMesOrdenAjustado) ~ "Enero",
-    grepl("-02", FechaMesOrdenAjustado) ~ "Febrero",
-    grepl("-03", FechaMesOrdenAjustado) ~ "Marzo",
-    grepl("-04", FechaMesOrdenAjustado) ~ "Abril"
-  ), .before = FechaMesOrdenAjustado)
-
+DataSem11 %>% 
+  ggplot(
+    data = .
+  ) +
+  geom_line(
+    mapping = aes(x = Mes, y = TotalCasos, group = 1)
+  )
 ```
 
 <br />
 <br />
 
+
+
+## 11. Mezclar grafico de barras y lineas con la misma data
+
+<br />
+
+- El **ggplot()** está vacio al comienzo
+
+<br />
+
+```r
+ggplot() +
+  geom_bar(
+    data = DataSem11 %>% filter(Anio == 2023)
+    , mapping = aes(x = Mes, y = TotalCasos)
+    , stat = "identity"
+  ) +
+  geom_line(
+    data = DataSem11 %>% filter(Anio==2024)
+    , mapping = aes(x = Mes, y = TotalCasos, group = 1)
+  )
+```
+
+<br />
+<br />
 
 
 
