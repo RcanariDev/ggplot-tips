@@ -362,3 +362,5 @@ ggplot() +
 
 <br />
 <br />
+
+## 13. Combinar geom_line() y geom_bar() | gge
