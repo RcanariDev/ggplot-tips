@@ -316,5 +316,49 @@ ggplot() +
 <br />
 
 
+## 12. Agregar color a geom_bar()
 
+<br />
 
+- Con el argumento **fill**
+
+<br />
+
+```r
+ggplot() +
+  geom_bar(
+    data = DataSem11 %>% filter(Anio == 2023)
+    , mapping = aes(x = Mes, y = TotalCasos, fill = "2023")
+    , stat = "identity"
+  ) +
+  scale_fill_manual(
+   name = "Año"
+   , values = c("2023" = "blue")
+  )
+```
+
+<br />
+<br />
+
+## 12. Agregar color a geom_line()
+
+<br />
+
+- Con el argumento **colour**
+
+<br />
+
+```r
+ggplot() +
+  geom_line(
+    data = DataSem11 %>% filter(Anio==2024)
+    , mapping = aes(x = Mes, y = TotalCasos, group = 1, colour = "2024")
+  ) +
+  scale_color_manual(
+    name = "Año"
+    , values = c("2024" = "red")
+  )
+```
+
+<br />
+<br />
