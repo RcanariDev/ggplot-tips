@@ -210,5 +210,35 @@ DataSem12 %>%
 <br />
 
 
-##
+## 8. Unir ggplots
+
+<br />
+
+```r
+library(ggpubr)
+
+DataUnida11 <- ggarrange(
+  PlotEmp11, PlotEmp12
+  , ncol = 2
+  , nrow = 1
+  , common.legend = TRUE
+  , legend = "top"
+)
+DataUnida11
+```
+
+<br />
+<br />
+
+## 9. Guardar ggplot como imagen png o jpg
+
+<br />
+
+```r
+ggsave("C:/Users/.../img/Img15.png", plot = DataUnida11, width=18, height=8, dpi=700)
+```
+
+<br />
+<br />
+
 
