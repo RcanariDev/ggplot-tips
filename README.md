@@ -230,6 +230,32 @@ DataUnida11
 <br />
 <br />
 
+# 8.1 Agregar spacio entre ggpubr
+
+<br />
+
+- Se tiene que agregar **NULL**
+- Se tiene que agregar el parámetro **widths**
+
+<br />
+
+```r
+library(ggpubr)
+ImCanalUnida11 <- ggarrange(
+  ImgCanal11, NULL, ImgCanal12
+  , ncol = 3
+  , nrow = 1
+  # , common.legend = TRUE
+  , legend = "top"
+  , widths = c(1, .2, 1)
+)
+ImCanalUnida11
+```
+
+<br />
+<br />
+
+
 ## 9. Guardar ggplot como imagen png o jpg
 
 <br />
