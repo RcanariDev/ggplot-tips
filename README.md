@@ -37,6 +37,36 @@ Data %>%
 <br />
 <br />
 
+## 2.1 Poner etiquetas SIMPLE a gráfico de barrats
+
+<br />
+
+- Agregar el parámetro **label**
+- Manejar el espacio vertical con **vjust**
+
+<br />
+
+```r
+DataPreg11 %>% 
+  ggplot(
+    data = .
+  ) +
+  geom_bar(
+    mapping = aes(x = FechaMesOrdenAjustado, y = TotalCasos)
+    , stat = "identity"
+    , fill = "#087830"
+  ) +
+  geom_text(
+    mapping = aes(x = FechaMesOrdenAjustado, y = TotalCasos, label = LabTotalCasos)
+    , vjust = -1.6
+    , color = "black"
+    , size = 4
+  )
+```
+
+<br />
+<br />
+
 ## 3. Cambiar nombre de los ejes x e y
 
 <br />
@@ -70,6 +100,38 @@ DataEmp11 %>%
 
 <br />
 <br />
+
+## 4.1 Poner etiquetas SIMPLE a grafico de barras agrupadas
+
+<br />
+
+- Se tiene que cambiar *fill* por **group**
+- Agregar el parámetro **label**
+- Se tiene poner **position** y **vjust**
+
+<br />
+
+```r
+DataCanal11 %>% 
+  ggplot(
+    data = .
+  ) + 
+  geom_bar(
+    mapping = aes(x = CanalVenta, y = TotalCasos, fill = FechaAjustada)
+    , stat = "identity"
+    , position = "dodge"
+  ) +
+  geom_text(
+    mapping = aes(x = CanalVenta, y = TotalCasos, group = FechaAjustada, label = DifTotalLab)
+    , position = position_dodge2(width = 0.9, preserve = "single")
+    , vjust = -.5
+  )
+```
+
+
+<br />
+<br />
+
 
 ## 5. Agregar un área de sombras entre dos lines
 
@@ -123,7 +185,7 @@ DataSem12 %>%
 <br />
 <br />
 
-# 7. Cambiar nombre a los ejes y la leyenda
+## 7. Cambiar nombre a los ejes y la leyenda
 
 <br />
 
@@ -148,5 +210,5 @@ DataSem12 %>%
 <br />
 
 
-
+##
 
